@@ -252,8 +252,9 @@ public class Tp_Integrador {
                        System.out.println("Desea agregar Materia aprobada ?");
                        System.out.println("1- SI");
                        System.out.println("2- NO");
+                       opc=Opcion.nextInt();
                        
-                       if(Opcion.nextInt()==1){
+                       if(opc==1){
                            //si entro en el si
                            //printear la lista de matereias disponibles for each
                            int indice=0;
@@ -309,7 +310,7 @@ public class Tp_Integrador {
                    //Intentamos hacer la Inscripcion y si es correta la guardamos en la BD
                    if(NuevaInscripcion.aprobada()==true){
                        String NuevaInscripcionJSON=ConvertirJSON(NuevaInscripcion);
-                       MySQL.ModificarBD("INSERT INTO inscripciones (\"Inscripcion\") VALUES ('"+NuevaInscripcionJSON+"');");
+                       MySQL.ModificarBD("INSERT INTO inscripciones (Inscripcion) VALUES ('"+NuevaInscripcionJSON+"');");
                        //en este caso no hay tabla de inscripciones por lo tanto no refrescamos tabla
                    }
                 }
